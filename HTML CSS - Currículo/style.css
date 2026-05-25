@@ -1,13 +1,13 @@
 body {
-    color: rgb(8, 16, 53);
+    color: rgb(62, 82, 173);
     display: flex;
     justify-content: center;
-    background-color: rgb(8, 22, 61)
+    background-color: #223874
 }
 
 .container {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    background-color: rgb(10, 54, 119);
+    background-color: rgb(207, 207, 207);
     text-align: center;
     border: 20px;
     padding: 50px;
