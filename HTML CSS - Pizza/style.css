@@ -1,78 +1,78 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #fff3e0;
-  }
-  
-  header {
-    background-color: #c62828;
-    color: white;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  nav {
-    background-color: #b71c1c;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .banner {
-    background: url('https://images.unsplash.com/photo-1601924582970-9238bcb495d0') center/cover;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 32px;
-    font-weight: bold;
-    text-shadow: 2px 2px 5px black;
-  }
-  
-  .container {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .menu {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .card {
-    background: white;
-    padding: 15px;
-    width: 200px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  }
-  
-  button {
-    background-color: #c62828;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  button:hover {
-    background-color: #8e0000;
-  }
-  
-  footer {
-    background-color: #c62828;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    margin-top: 20px;
-  }
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fff3e0;
+}
+
+header {
+  background-color: #c62828;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  background-color: #b71c1c;
+  padding: 10px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.banner {
+  background: url('https://images.unsplash.com/photo-1601924582970-9238bcb495d0') center/cover;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px black;
+}
+
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+button {
+  background-color: #c62828;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #8e0000;
+}
+
+footer {
+  background-color: #c62828;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
