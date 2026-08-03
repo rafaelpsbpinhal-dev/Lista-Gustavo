@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Madereira Silva e Silva | Tabela de Preços</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Estilos para o aviso em destaque */
+    .alerta-info {
+      background-color: #e0a96d;
+      color: #222;
+      padding: 1rem;
+      border-radius: 6px;
+      margin: 1rem 0;
+      font-weight: bold;
+    }
+
+    /* Estilos para a Tabela de Preços */
+    .tabela-container {
+      overflow-x: auto;
+      margin-top: 1.5rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    th, td {
+      padding: 0.9rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid #e0d8cc;
+    }
+
+    th {
+      background-color: var(--primary-color);
+      color: var(--text-light);
+      font-weight: 600;
+    }
+
+    tr:hover {
+      background-color: #f2ebd9;
+    }
+
+    .preco {
+      font-weight: bold;
+      color: var(--accent-color);
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <h1>Silva & <span>Silva</span></h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="produtos.html">Produtos</a></li>
+        <li><a href="precos.html" class="active">Preços</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Tabela de Preços e Medidas</h2>
+
+    <div class="alerta-info">
+      🌲 Todas as nossas peças são de madeira de <strong>Pinus e Eucalipto</strong> e possuem <strong>3 metros de comprimento</strong>.
+    </div>
+
+    <div class="tabela-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Produto</th>
+            <th>Medida / Detalhes</th>
+            <th>Preço</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Vigas e Caibros</strong></td>
+            <td>Cobrado por cubagem (peça)</td>
+            <td class="preco">R$ 1.500,00 / m³</td>
+          </tr>
+          <tr>
+            <td><strong>Tábua (10 cm)</strong></td>
+            <td>Largura 10 cm x 3 metros</td>
+            <td class="preco">R$ 12,00</td>
+          </tr>
+          <tr>
+            <td><strong>Tábua (12 cm)</strong></td>
+            <td>Largura 12 cm x 3 metros</td>
+            <td class="preco">R$ 15,00</td>
+          </tr>
+          <tr>
+            <td><strong>Tábua (15 cm)</strong></td>
+            <td>Largura 15 cm x 3 metros</td>
+            <td class="preco">R$ 18,00</td>
+          </tr>
+          <tr>
+            <td><strong>Tábua (20 cm)</strong></td>
+            <td>Largura 20 cm x 3 metros</td>
+            <td class="preco">R$ 25,00</td>
+          </tr>
+          <tr>
+            <td><strong>Tábua (25 cm)</strong></td>
+            <td>Largura 25 cm x 3 metros</td>
+            <td class="preco">R$ 32,00</td>
+          </tr>
+          <tr>
+            <td><strong>Tábua (30 cm)</strong></td>
+            <td>Largura 30 cm x 3 metros</td>
+            <td class="preco">R$ 40,00</td>
+          </tr>
+          <tr>
+            <td><strong>Pranchões</strong></td>
+            <td>Cobrado por cubagem (peça)</td>
+            <td class="preco">R$ 1.500,00 / m³</td>
+          </tr>
+          <tr>
+            <td><strong>Decks e Assoalhos</strong></td>
+            <td>Por Metro Quadrado</td>
+            <td class="preco">R$ 120,00 / m²</td>
+          </tr>
+          <tr>
+            <td><strong>Mata Junta</strong></td>
+            <td>Plainada e Desquinada</td>
+            <td class="preco">R$ 6,50</td>
+          </tr>
+          <tr>
+            <td><strong>Lenha</strong></td>
+            <td>Por Metro Quadrado</td>
+            <td class="preco">R$ 150,00 /m²</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Madereira Silva e Silva. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>
