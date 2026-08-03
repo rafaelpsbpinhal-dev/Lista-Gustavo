@@ -1,0 +1,179 @@
+/* Configurações Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #e9ecef;
+    padding: 20px;
+  }
+  
+  /* Container Principal com CSS Grid */
+  .container {
+    display: grid;
+    grid-template-columns: 180px 1fr 220px;
+    grid-template-rows: auto auto auto auto auto;
+    gap: 15px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  /* 1. Cabeçalho */
+  .cabecalho {
+    grid-column: 1 / 4;
+    grid-row: 1;
+    background-color: #0d6efd;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+  }
+  
+  /* 2. Menu Lateral */
+  .menu-lateral {
+    grid-column: 1;
+    grid-row: 2;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+  }
+  
+  .menu-lateral ul {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+  }
+  
+  .menu-lateral a {
+    color: #0d6efd;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    display: block;
+  }
+  
+  .menu-lateral a:hover, 
+  .menu-lateral a.ativo {
+    background-color: #0d6efd;
+    color: white;
+  }
+  
+  /* 3. Conteúdo Principal */
+  .conteudo-principal {
+    grid-column: 2;
+    grid-row: 2;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    line-height: 1.6;
+  }
+  
+  .conteudo-principal h2 {
+    color: #0d6efd;
+    margin-bottom: 10px;
+  }
+  
+  /* 4. Anúncios (Grid com 3 linhas empilhadas) */
+  .anuncios {
+    grid-column: 3;
+    grid-row: 2;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+  }
+  
+  .caixa-anuncio {
+    background-color: #ffffff;
+    padding: 12px;
+    border-radius: 8px;
+    border-left: 5px solid #ffc107;
+    border-top: 1px solid #dee2e6;
+    border-right: 1px solid #dee2e6;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  .caixa-anuncio h3 {
+    color: #333;
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+  
+  .caixa-anuncio p {
+    font-size: 0.85rem;
+    color: #666;
+  }
+  
+  /* 5. Inscrições */
+  .inscricoes {
+    grid-column: 1 / 4;
+    grid-row: 3;
+    background-color: #198754;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .inscricoes h2 {
+    margin-bottom: 12px;
+  }
+  
+  .form-inscricao {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .form-inscricao input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .form-inscricao button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #212529;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  /* 6. Galeria (3 Colunas em Grid) */
+  .galeria {
+    grid-column: 1 / 4;
+    grid-row: 4;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  
+  .galeria img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+  }
+  
+  /* 7. Rodapé */
+  .rodape {
+    grid-column: 1 / 4;
+    grid-row: 5;
+    background-color: #212529;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 0.9rem;
+  }
