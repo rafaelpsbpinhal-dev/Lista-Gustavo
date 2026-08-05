@@ -1,9 +1,9 @@
-/* Variáveis de Cores e Fontes */
+
 :root {
-  --primary-color: #5c3a21;   /* Madeira escuro */
-  --secondary-color: #8c5a2b; /* Madeira claro */
-  --accent-color: #2d5a27;    /* Verde floresta */
-  --bg-light: #f9f6f0;        /* Off-white quente */
+  --primary-color: #5c3a21;   
+  --secondary-color: #8c5a2b; 
+  --accent-color: #2d5a27;    
+  --bg-light: #f9f6f0;        
   --text-dark: #222222;
   --text-light: #ffffff;
 }
@@ -24,7 +24,7 @@ body {
   min-height: 100vh;
 }
 
-/* Cabeçalho e Navegação */
+
 header {
   background-color: var(--primary-color);
   color: var(--text-light);
@@ -66,7 +66,7 @@ nav a.active {
   color: #e0a96d;
 }
 
-/* Container Conteúdo */
+
 main {
   flex: 1;
   padding: 2rem;
@@ -75,7 +75,7 @@ main {
   width: 100%;
 }
 
-/* Hero Section (Home) */
+
 .hero {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1546484475-7f7bd55792da?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
   color: var(--text-light);
@@ -108,7 +108,8 @@ main {
   background-color: var(--primary-color);
 }
 
-/* Cards & Grid */
+
+.cards-grid,
 .grid-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -122,14 +123,13 @@ main {
   border-radius: 8px;
   padding: 1.5rem;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 0.8rem;
 }
 
 .card h3 {
   color: var(--primary-color);
-  margin-bottom: 0.5rem;
 }
 
 .card-img {
@@ -137,17 +137,15 @@ main {
   height: 200px;
   object-fit: cover;
   border-radius: 6px;
-  margin-top: 0.8rem;
 }
 
 .card-preco {
-  margin-top: 0.8rem;
   font-size: 1.1rem;
   font-weight: bold;
   color: var(--accent-color);
 }
 
-/* Tabelas e Alertas */
+
 .alerta-info {
   background-color: #e0a96d;
   color: #222;
@@ -193,9 +191,9 @@ tr:hover {
   white-space: nowrap;
 }
 
-/* Formulários & Simulador */
+
 .form-group {
-  margin-bottom: 1.2rem;
+  margin-bottom: 0;
 }
 
 .form-group label {
@@ -223,12 +221,44 @@ tr:hover {
   margin-top: 1.5rem;
 }
 
+
 .linha-simulacao {
-  display: flex;
+  display: grid;
+  grid-template-columns: 2fr 1fr auto;
   gap: 1rem;
-  align-items: flex-end;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
+  align-items: end;
+}
+
+
+.m3-inputs {
+  display: none;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+  background: #fdfbf7;
+  padding: 1rem;
+  border: 1px dashed #d4b896;
+  border-radius: 6px;
+}
+
+.m3-inputs.active {
+  display: grid;
+}
+
+.btn-remover {
+  background-color: #a83232;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+  height: 45px;
+}
+
+.btn-remover:hover {
+  background-color: #7a2323;
 }
 
 .resultado-box {
@@ -237,12 +267,21 @@ tr:hover {
   background-color: #f2ebd9;
   border-left: 5px solid var(--primary-color);
   border-radius: 4px;
+  display: grid;
+  gap: 0.5rem;
 }
 
 .resultado-total {
   font-size: 1.6rem;
   color: var(--accent-color);
   font-weight: bold;
+}
+
+
+@media (max-width: 650px) {
+  .linha-simulacao {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Rodapé */
