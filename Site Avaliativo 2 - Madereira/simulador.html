@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Madeireira Silva e Silva | Simulador de Preços</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Estilo para o botão de remover item */
+    .btn-remover {
+      background-color: #a83232;
+      color: #ffffff;
+      border: none;
+      padding: 0.75rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.2s;
+      height: 45px;
+    }
+
+    .btn-remover:hover {
+      background-color: #7a2323;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <h1>Silva & <span>Silva</span></h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="produtos.html">Produtos</a></li>
+        <li><a href="precos.html">Preços</a></li>
+        <li><a href="simulador.html" class="active">Simulador</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Simulador de Preços</h2>
+    <p>Adicione os itens desejados para calcular o orçamento estimado do seu pedido:</p>
+
+    <div class="simulador-box">
+      <div id="itens-container">
+        <!-- Primeira linha inicial -->
+        <div class="linha-simulacao">
+          <div class="form-group" style="flex: 2; min-width: 200px;">
+            <label>Selecione o Produto</label>
+            <select class="select-produto" onchange="calcularTotal()">
+              <option value="0" selected disabled>-- Selecione um produto --</option>
+              <option value="12">Tábua 10cm (3m) - R$ 12,00</option>
+              <option value="15">Tábua 12cm (3m) - R$ 15,00</option>
+              <option value="18">Tábua 15cm (3m) - R$ 18,00</option>
+              <option value="25">Tábua 20cm (3m) - R$ 25,00</option>
+              <option value="32">Tábua 25cm (3m) - R$ 32,00</option>
+              <option value="40">Tábua 30cm (3m) - R$ 40,00</option>
+              <option value="120">Deck (m²) - R$ 120,00</option>
+              <option value="60">Soalho (m²) - R$ 60,00</option>
+              <option value="6">Ripa (3m) - R$ 6,00</option>
+              <option value="6.5">Mata Junta Plainada (3m) - R$ 6,50</option>
+              <option value="850">Porta Maciça (2,10m) - R$ 850,00</option>
+              <option value="350">Porta Semi-Oca (2,10m) - R$ 350,00</option>
+              <option value="150">Lenha (m²) - R$ 150,00</option>
+            </select>
+          </div>
+          
+          <div class="form-group" style="flex: 1; min-width: 100px;">
+            <label>Quantidade</label>
+            <input type="number" class="input-qtd" value="1" min="1" oninput="calcularTotal()">
+          </div>
+
+          <div class="form-group">
+            <button type="button" class="btn-remover" onclick="removerLinha(this)">✕ Remover</button>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" class="btn" onclick="adicionarLinha()" style="margin-top: 0;">+ Adicionar Mais Item</button>
+
+      <div class="resultado-box">
+        <p>Valor Total Estimado:</p>
+        <div class="resultado-total" id="valor-total">R$ 0,00</div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Madeireira Silva e Silva. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    function adicionarLinha() {
+      const container = document.getElementById('itens-container');
+      const novaLinha = document.createElement('div');
+      novaLinha.className = 'linha-simulacao';
+      novaLinha.innerHTML = `
+        <div class="form-group" style="flex: 2; min-width: 200px;">
+          <select class="select-produto" onchange="calcularTotal()">
+            <option value="0" selected disabled>-- Selecione um produto --</option>
+            <option value="12">Tábua 10cm (3m) - R$ 12,00</option>
+            <option value="15">Tábua 12cm (3m) - R$ 15,00</option>
+            <option value="18">Tábua 15cm (3m) - R$ 18,00</option>
+            <option value="25">Tábua 20cm (3m) - R$ 25,00</option>
+            <option value="32">Tábua 25cm (3m) - R$ 32,00</option>
+            <option value="40">Tábua 30cm (3m) - R$ 40,00</option>
+            <option value="120">Deck (m²) - R$ 120,00</option>
+            <option value="60">Soalho (m²) - R$ 60,00</option>
+            <option value="6">Ripa (3m) - R$ 6,00</option>
+            <option value="6.5">Mata Junta Plainada (3m) - R$ 6,50</option>
+            <option value="850">Porta Maciça (2,10m) - R$ 850,00</option>
+            <option value="350">Porta Semi-Oca (2,10m) - R$ 350,00</option>
+            <option value="150">Lenha (m²) - R$ 150,00</option>
+          </select>
+        </div>
+        <div class="form-group" style="flex: 1; min-width: 100px;">
+          <input type="number" class="input-qtd" value="1" min="1" oninput="calcularTotal()">
+        </div>
+        <div class="form-group">
+          <button type="button" class="btn-remover" onclick="removerLinha(this)">✕ Remover</button>
+        </div>
+      `;
+      container.appendChild(novaLinha);
+      calcularTotal();
+    }
+
+    function removerLinha(botao) {
+      const container = document.getElementById('itens-container');
+      const linhas = container.getElementsByClassName('linha-simulacao');
+      
+      if (linhas.length > 1) {
+        botao.closest('.linha-simulacao').remove();
+      } else {
+        const linha = linhas[0];
+        linha.querySelector('.select-produto').selectedIndex = 0;
+        linha.querySelector('.input-qtd').value = 1;
+      }
+      
+      calcularTotal();
+    }
+
+    function calcularTotal() {
+      const produtos = document.querySelectorAll('.select-produto');
+      const quantidades = document.querySelectorAll('.input-qtd');
+      let total = 0;
+
+      produtos.forEach((prod, index) => {
+        const preco = parseFloat(prod.value) || 0;
+        const qtd = parseInt(quantidades[index].value) || 0;
+        total += preco * qtd;
+      });
+
+      document.getElementById('valor-total').innerText = 'R$ ' + total.toFixed(2).replace('.', ',');
+    }
+
+    document.addEventListener('DOMContentLoaded', calcularTotal);
+  </script>
+
+</body>
+</html>
